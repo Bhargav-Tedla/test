@@ -1,0 +1,47 @@
+.home-page{
+	width: auto;
+	padding: 2% 0 0;
+	margin: auto;
+}
+h1{
+  color:  #3d4174;
+}
+.form{
+	position: static;
+  border: 3px solid #73AD21;
+	z-index: 1;
+  background: #909bb8;
+	max-width: 300px;
+  margin: 0 auto 50px;
+  padding: 20px;
+	text-align: center;
+
+}
+
+.form input{
+	font-family: "Roboto",sans-serif;
+	outline: 1;
+	background:#f5f3f3;
+	width: 100%;
+	padding: 15px;
+}
+
+.form button{
+  text-decoration: underline;
+  background: #383c63;
+  color: #ffffff;
+  width: 90px;
+  height:30px;
+}
+
+.form .message{
+	margin: 15px 0 0;
+	color: aliceblue;
+	font-size: 12px;
+}
+
+
+.form .message a{
+	color: #404fa8;
+	text-decoration:none;
+}

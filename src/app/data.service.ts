@@ -40,7 +40,7 @@ getData(username): Observable<any> {
   const token = localStorage.getItem('accessToken');
   console.log(token);
   const headers = {'content-type': 'application/json','Authorization' : `Bearer ${token}`};
-    this.DataObservable = this.http.get('http://localhost:3000/budget',{ headers: headers,params:{userid : username }}).pipe(shareReplay());
+    this.DataObservable = this.http.get('budget',{ headers: headers,params:{userid : username }}).pipe(shareReplay());
     return this.DataObservable;
 }
 
@@ -49,7 +49,7 @@ addBudgetdata(data:BudgetSchema){
   const headers = {'content-type': 'application/json', 'Authorization' : 'Bearer ${token}'};
   const body=JSON.stringify(data);
   console.log(body)
-  return this.http.post('http://localhost:3000/budget',body,{'headers':headers});
+  return this.http.post('budget',body,{'headers':headers});
 }
 
 private readonly NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
@@ -81,7 +81,7 @@ private readonly NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
   userSignUp(data:UserSchema){
     const headers = {'content-type': 'application/json'};
     const body=JSON.stringify(data);
-    return this.http.post('http://localhost:3000/users',body,{'headers':headers});
+    return this.http.post('users',body,{'headers':headers});
   }
 
   invaliduser(){
@@ -96,7 +96,7 @@ private readonly NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
     const headers = {'content-type': 'application/json'};
     const body=JSON.stringify(data);
     console.log(body)
-    return this.http.post('http://localhost:3000/auth',body,{'headers':headers}).subscribe((res:any)=>{
+    return this.http.post('auth',body,{'headers':headers}).subscribe((res:any)=>{
       console.log(res);
       this.userRecord['username'] = data.username;
       this.userRecord['password'] = data.password;

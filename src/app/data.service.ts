@@ -81,7 +81,7 @@ private readonly NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
   userSignUp(data:UserSchema){
     const headers = {'content-type': 'application/json'};
     const body=JSON.stringify(data);
-    return this.http.post('users',body,{'headers':headers});
+    return this.http.post('http://localhost:3000/users',body,{'headers':headers});
   }
 
   invaliduser(){
@@ -96,7 +96,7 @@ private readonly NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
     const headers = {'content-type': 'application/json'};
     const body=JSON.stringify(data);
     console.log(body)
-    return this.http.post('auth',body,{'headers':headers}).subscribe((res:any)=>{
+    return this.http.post('http://localhost:3000/auth',body,{'headers':headers}).subscribe((res:any)=>{
       console.log(res);
       this.userRecord['username'] = data.username;
       this.userRecord['password'] = data.password;

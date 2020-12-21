@@ -36,9 +36,7 @@ export class LoginComponent implements OnInit {
     this.toastr.success('Logged In','Success');
   }
 
-  loginFailure(){
-    this.toastr.error('Invalid Credentials. Please enter valid credentials','Failure');
-  }
+ 
   loginFunction(){
     let record = {};
     record['username'] = this.username;
